@@ -1,0 +1,25 @@
+<%= form_for(@book_link) do |f| %>
+  <% if @book_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book_link.errors.count, "error") %> prohibited this book_link from being saved:</h2>
+
+      <ul>
+      <% @book_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :book_id %><br />
+    <%= f.text_field :book_id %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
